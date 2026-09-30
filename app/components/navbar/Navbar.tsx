@@ -9,6 +9,7 @@ function Navbar() {
   const navs = [
     { title: "Home", link: "/" },
     { title: "About", link: "/about" },
+    { title: "Contact Us", link: "/contact-us" },
   ];
   return (
     <div>
