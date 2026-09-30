@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 import Counter from "./components/counter";
 import ServerComponent from "./components/serverComponent";
 
@@ -19,8 +19,12 @@ export interface Rating {
 // json to typescript converter copy the obj from log and paste it in this site
 
 async function About() {
-  const { data } = await axios("https://fakestoreapi.com/products");
-  console.log(data);
+  // const { data } = await axios("https://fakestoreapi.com/products");
+  // console.log(data);
+
+  const res = await fetch("http://localhost:3008/products");
+  const data = await res.json();
+  // cache , 'force-catch' 'no-store' ...
 
   return (
     <>
@@ -32,7 +36,6 @@ async function About() {
       {data.map((item: IGetProduct) => (
         <div key={item.id} className="m-3 bg-cyan-950 p-2">
           <h3>{item.title}</h3>
-          <p>{item.description}</p>
         </div>
       ))}
     </>
