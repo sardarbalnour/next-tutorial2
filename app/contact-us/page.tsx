@@ -9,7 +9,7 @@ function ContactUs() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios("https://fakestoreapi.com/products").then((res) => setData(res.data));
+    axios("http://localhost:3008/products").then((res) => setData(res.data));
   }, []);
 
   return (
@@ -17,7 +17,6 @@ function ContactUs() {
       {data.map((item: IGetProduct) => (
         <div key={item.id} className="m-3 bg-amber-800 p-2">
           <h3>{item.title}</h3>
-          <p>{item.description}</p>
         </div>
       ))}
     </div>
