@@ -22,9 +22,16 @@ async function About() {
   // const { data } = await axios("https://fakestoreapi.com/products");
   // console.log(data);
 
-  const res = await fetch("http://localhost:3008/products");
+  const res = await fetch("http://localhost:3008/products", {
+    next: { revalidate: 10 },
+  });
   const data = await res.json();
+
+  //   const res = await fetch("http://localhost:3008/products", {
+  //   cache: "force-cache",
+  // });
   // cache , 'force-catch' 'no-store' ...
+  // it is no store by default
 
   return (
     <>
@@ -43,3 +50,9 @@ async function About() {
 }
 
 export default About;
+
+// revalidate: 10 means it will revalidate the data every 10 seconds.
+// It will not fetch the data from the server every time.
+// It will fetch the data from the server only if the data is older than 10 seconds.
+// If the data is newer than 10 seconds, it will return the cached data.
+// refresh in browser will fetch the data from the server and update the cache.
