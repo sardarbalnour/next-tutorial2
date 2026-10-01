@@ -1,4 +1,5 @@
 // import axios from "axios";
+import AddProduct from "./addProduct/AddProduct";
 import Counter from "./components/counter";
 import ServerComponent from "./components/serverComponent";
 
@@ -40,6 +41,7 @@ async function About() {
         <ServerComponent />
       </Counter>
       <hr />
+      <AddProduct />
       {data.map((item: IGetProduct) => (
         <div key={item.id} className="m-3 bg-cyan-950 p-2">
           <h3>{item.title}</h3>
