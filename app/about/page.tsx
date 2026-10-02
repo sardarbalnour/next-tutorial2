@@ -1,7 +1,10 @@
 // import axios from "axios";
-import AddProduct from "./addProduct/AddProduct";
+
 import Counter from "./components/counter";
 import ServerComponent from "./components/serverComponent";
+
+import AddProduct from "./addProduct/AddProduct";
+import { sensitiveFunc } from "../utils/serverFunc";
 
 export interface IGetProduct {
   id: number;
@@ -33,6 +36,8 @@ async function About() {
   // });
   // cache , 'force-catch' 'no-store' ...
   // it is no store by default
+
+  sensitiveFunc();
 
   return (
     <>
