@@ -5,12 +5,16 @@ import { useEffect, useState } from "react";
 
 import { IGetProduct } from "../about/page";
 
+import { clientFunc } from "../utils/clientFunc";
+
 function ContactUs() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     axios("http://localhost:3008/products").then((res) => setData(res.data));
   }, []);
+
+  clientFunc();
 
   return (
     <div>
