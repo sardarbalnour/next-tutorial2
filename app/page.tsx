@@ -7,3 +7,9 @@ export default function Home() {
     </div>
   );
 }
+
+//compiler
+//next.config.ts
+//experimental
+//boilerplate
+
